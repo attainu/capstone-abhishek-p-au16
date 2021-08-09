@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userModel = require('../models/User');
+const bcrypt = require('bcrypt');
 
 router.get('/signup',(req, res)=>{
     res.send("signup page")
@@ -8,9 +9,18 @@ router.get('/signup',(req, res)=>{
 
 router.post('/signup',async(req, res)=>{
     try {
+        //user = req.body
+        
+       
+        const salt = await bcrypt.genSalt(10)
+
+        const hashedPassword = await bcrypt.hash(req.body.password,salt)
+        req.body.password = hashedPassword
+        console.log(req.body)
+
         const newUser = new userModel(req.body)
         const saveduser = await newUser.save()
-        console.log(newUser)
+        console.log(saveduser) 
         res.redirect('/')
     }catch (error) {
         console.log(error)
