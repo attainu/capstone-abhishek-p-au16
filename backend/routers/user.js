@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const userModel = require('../models/User');
 const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+
 
 router.get('/signup',(req, res)=>{
     res.send("signup page")
@@ -27,6 +29,16 @@ router.post('/signup',async(req, res)=>{
         res.send("error occured")
 
     }
+
+})
+
+
+router.get('/login',(req, res)=>{
+    res.send("loginPage")
+})
+
+router.post('/login',(req, res)=>{
+    
 
 })
 
