@@ -72,12 +72,17 @@ router.get('/cart',authenticateToken,(req, res)=>{
 //     return jwt.sign(payload,secretkey,{expiresIn:'60s'})
 // }
 function authenticateToken(req,res,next){
-    const authToken = req.headers.authentication
-    console.log(authToken)
-    if(!authToken){ return res.json({error:true})}
-    const veryfied = jwt.verify(authToken,secretkey)
-    console.log(veryfied)
-    next()
+   try{ 
+const authToken = req.headers.authorization
+console.log(authToken)
+if(!authToken){ return res.json({error:true})}
+const veryfied = jwt.verify(authToken,secretkey)
+console.log(veryfied)
+next()
+}
+    catch(err){
+        res.json({error:true})
+    }
  }
 
 
