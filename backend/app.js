@@ -3,8 +3,11 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cookieparser = require('cookie-parser')
 
 const userRouter = require('./routers/user')
+
+const productRouter = require('./routers/products')
 
 const {DB_URL} = process.env
 
@@ -29,9 +32,11 @@ mongoose.connect(DB_URL,{
     // console.log(result)
 
 })
+app.use(cookieparser())
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 app.use('/users',userRouter)
+app.use('/admin',productRouter)
 app.get('/',(req,res)=>{
     res.send("home computerCart");
 })

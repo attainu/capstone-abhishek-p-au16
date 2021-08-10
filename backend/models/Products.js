@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
     
     },
    price:{
-        type: int,
+        type: 'string',
         required: true,
        
     },
@@ -19,9 +19,7 @@ const UserSchema = new mongoose.Schema({
     catagory:{
         type: 'string',
         required: true,
-    },
-    reviews:{type:'string', 
-    required: true}
+    }
 })
 
 const User =  mongoose.model('products',UserSchema)
