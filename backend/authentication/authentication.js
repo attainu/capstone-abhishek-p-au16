@@ -12,6 +12,7 @@ const authenticate = (req,res,next)=>{
      next()
      }
          catch(err){
+             console.log(err)
              res.json({error:true})
          }
       }

@@ -6,6 +6,7 @@ const cookieparser = require("cookie-parser");
 const fileupload = require("express-fileupload");
 const userRouter = require("./routers/user");
 const adminRouter = require("./routers/admin");
+const validater = require("validater");
 
 const { DB_URL } = process.env;
 mongoose.connect(
@@ -27,6 +28,7 @@ app.use(cookieparser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(fileupload())
+app.use(validater());
 
 app.use("/users", userRouter);
 app.use("/admin", adminRouter);
