@@ -2,7 +2,7 @@ const jwt = require('express-jwt');
 const {secretkey} = process.env
 
 
-const authenticate = (req,res,next)=>{
+exports.authenticate = (req,res,next)=>{
         try{ 
      const authToken = req.headers.authorization
      console.log(authToken)
@@ -17,7 +17,7 @@ const authenticate = (req,res,next)=>{
          }
       }
      
- module.exports = authenticate
+ 
 
 
 // exports.requirelogin = jwt({
