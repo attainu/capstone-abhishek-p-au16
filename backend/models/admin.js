@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const UserSchema = new mongoose.Schema({
-    username:{
+const AdminSchema = new mongoose.Schema({
+    name:{
         type: 'string',
         trim: true,
         required: true,
@@ -21,9 +21,9 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     role:{type:"string",
-          default:'user'}
+          default:'admin'}
 })
 
-const User =  mongoose.model('users',UserSchema)
+const Admin =  mongoose.model('admin',AdminSchema)
 
-module.exports = User
+module.exports =Admin

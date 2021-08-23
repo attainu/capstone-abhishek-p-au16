@@ -55,7 +55,7 @@ module.exports = {
   },
 
   userLogout: (req, res) => {
-    res.clearcookie("t");
+    res.clearcookie("token");
     res.json({ message: "logout success" });
   },
 };
