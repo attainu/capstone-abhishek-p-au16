@@ -7,7 +7,8 @@ const upload  = require("../cloud/cloudinary")
 
 
 
-
+router.post("/signup", userHelper.adminSignup);
+router.post("/login",userHelper.adminlogin)
 router.get("/view-products",(req, res) => {
   res.send("product list");
 });
@@ -28,7 +29,8 @@ router.post("/add-products", async (req, res) => {
     const url = await upload(img,mimetype);
 
     console.log(url);
-
+router.put("/update-products",productHelper.updateProduct)
+router.delete("/delete-product",productHelper.deleteProduct)
 
 
 
