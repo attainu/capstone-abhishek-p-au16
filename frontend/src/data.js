@@ -1,36 +1,43 @@
 export default {
   products: [
     {
-      _id: "1",
-      name: "Slim Shirt",
-      category: "Shirt",
-      image: "",
-      price: 50,
-      brand: "Nike",
-      rating: 4.3,
-      numReviews: 10,
-    },
-
-    {
-      _id: "2",
-      name: "Fit Shirt",
-      category: "Shirt",
-      image: "",
-      price: 80,
-      brand: "Nike",
-      rating: 4.6,
-      numReviews: 10,
-    },
-
-    {
-      _id: "3",
-      name: "Slim Shirt",
-      category: "Pants",
-      image: "",
+      _id: '1',
+      name: 'Slim Shirt',
+      category: 'Shirts',
+      image: '/images/d1.jpg',
       price: 60,
-      brand: "Nike",
+      brand: ' Nike',
       rating: 4.5,
-      numReviews: 10,
+      numReviews: 10
     },
-  ],
-};
+    {
+      _id: '2',
+      name: 'Fit Shirt',
+      category: 'Shirts',
+      image: '/images/d1.jpg',
+      price: 50,
+      brand: ' Nike',
+      rating: 4.2,
+      numReviews: 5
+    },
+    {
+      _id: '3',
+      name: 'Best Pants',
+      category: 'Pants',
+      image: '/images/d1.jpg',
+      price: 70,
+      brand: ' Nike',
+      rating: 4.5,
+      numReviews: 8
+    }, {
+      _id: '4',
+      name: 'Best Pants',
+      category: 'Pants',
+      image: '/images/d1.jpg',
+      price: 70,
+      brand: ' Nike',
+      rating: 4.5,
+      numReviews: 8
+    },
+  ]
+}
